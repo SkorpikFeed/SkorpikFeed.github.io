@@ -1,0 +1,16 @@
+.border-dashed-top {
+  border-top-style: dashed;
+}
+
+.border-dashed-bottom {
+  border-bottom-style: dashed;
+}
+
+.list-group-item {
+  transition: all 0.3s ease;
+}
+
+.list-group-item:hover {
+  background-color: #e6e7e9;
+  border-color: #e6e7e9;
+}
