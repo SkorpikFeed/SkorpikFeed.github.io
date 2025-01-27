@@ -14,3 +14,33 @@
   background-color: #e6e7e9;
   border-color: #e6e7e9;
 }
+
+.week {
+  display: none;
+}
+
+.week.active {
+  display: block;
+}
+
+.live {
+  background-color: rgb(250, 209, 209);
+}
+
+.current-day .card-title {
+  background-color: white;
+  color: var(--bs-secondary);
+  border-radius: 17px;
+}
+
+.btn-style p {
+  background-color: white;
+  color: var(--bs-secondary);
+  border-radius: 8px;
+  transition: background ease 0.5s;
+}
+
+#Week1Btn,
+#Week2Btn {
+  width: 180px;
+}
