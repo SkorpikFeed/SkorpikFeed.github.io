@@ -44,3 +44,10 @@
 #Week2Btn {
   width: 180px;
 }
+.copyCode {
+  background-color: white;
+  border-radius: 4px;
+  padding-top: 1px;
+  color: green;
+  user-select: none;
+}

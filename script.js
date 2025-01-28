@@ -38,6 +38,7 @@ function addBadgeToLiveElement() {
 
 // Assing live class to current lesson
 function assignLiveClassToCurrentLesson() {
+  const today = new Date();
   tableDays.forEach((day) => {
     const lessons = day.querySelectorAll(".list-group-item");
     lessons.forEach((lesson) => {
@@ -89,8 +90,27 @@ if (isFirstWeek) {
   secondWeek.classList.add("btn-style");
 }
 
+// Function to copy text to clipboard
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text);
+}
+
+// Add event listener to the code element
+document.querySelectorAll(".copyCode").forEach((element) => {
+  element.addEventListener("click", function () {
+    if (this.textContent != "Copied") {
+      const text = this.textContent;
+      copyToClipboard(text);
+      this.textContent = "Copied";
+      setTimeout(() => {
+        this.textContent = text;
+      }, 3000);
+    }
+  });
+});
+
 document.getElementById("Week1").classList.toggle("active", isFirstWeek);
 document.getElementById("Week2").classList.toggle("active", !isFirstWeek);
-assignLiveClassToCurrentLesson();
 setInterval(assignLiveClassToCurrentLesson, 60000);
+assignLiveClassToCurrentLesson();
 addStyleToCurrentDay();
