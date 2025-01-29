@@ -28,11 +28,13 @@ function addBadgeToLiveElement() {
 
   liveElements.forEach((element) => {
     const targetCol = element.querySelector(".badge-group");
-    const badge = document.createElement("span");
-    badge.classList.add("text-bg-danger");
-    badge.classList.add("badge");
-    badge.textContent = "LIVE";
-    targetCol.appendChild(badge);
+    if (!targetCol.querySelector(".badge.text-bg-danger")) {
+      const badge = document.createElement("span");
+      badge.classList.add("text-bg-danger");
+      badge.classList.add("badge");
+      badge.textContent = "LIVE";
+      targetCol.appendChild(badge);
+    }
   });
 }
 
