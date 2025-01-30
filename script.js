@@ -38,6 +38,19 @@ function addBadgeToLiveElement() {
   });
 }
 
+// Remove badge from non-live elements
+function removeBadgeFromNonLiveElements() {
+  const allElements = document.querySelectorAll(".badge-group");
+
+  allElements.forEach((element) => {
+    const badge = element.querySelector(".badge.text-bg-danger");
+    if (badge && !element.closest(".live")) {
+      badge.remove();
+    }
+  });
+}
+
+// TODO: fix live badges remaining after the end of the lesson
 // Assing live class to current lesson
 function assignLiveClassToCurrentLesson() {
   const today = new Date();
@@ -69,6 +82,7 @@ function assignLiveClassToCurrentLesson() {
     });
   });
   addBadgeToLiveElement();
+  removeBadgeFromNonLiveElements();
 }
 document.getElementById("Week1Btn").addEventListener("click", function () {
   document.getElementById("Week2Btn").classList.remove("btn-style");
