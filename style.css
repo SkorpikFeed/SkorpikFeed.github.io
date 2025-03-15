@@ -33,7 +33,7 @@
 }
 
 .list-group-item:hover .badge-group {
-  transform: translate(16%, -10px);
+  transform: translate(16%, -7px);
 }
 
 .week {
